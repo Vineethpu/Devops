@@ -8,7 +8,7 @@ on:
     branches: [ main ]
 
 jobs:
-  tests:
+  test:
     runs-on: ubuntu-latest  # fresh VM from Github
     steps:
       - name: Checkout code   #download the repo
@@ -20,5 +20,5 @@ jobs:
           python-version: "3.12"  
           run: pip install -r requirements.txt
 
-      - name: Run tests   # a failure here turns the pipeline red
+      - name: Run tests   # a failure here turns the pipeline red else green
         run : pytest -v
